@@ -1,0 +1,126 @@
+{
+ "spider": "assets://1118.jar;md5;a81c03da23212c9ffc8a699465dedc8b",
+ "sites": [
+  {
+   "key": "legado_wtzw",
+   "name": "[小说] 梧桐中文",
+   "type": 3,
+   "api": "assets://legado.py",
+   "ext": "assets://legado/src-1.json",
+   "searchable": 1,
+   "quickSearch": 1,
+   "filterable": 0,
+   "changeable": 0
+  },
+  {
+   "key": "legado_ytlk",
+   "name": "[小说] 夜天连看",
+   "type": 3,
+   "api": "assets://legado.py",
+   "ext": "assets://legado/src-2.json",
+   "searchable": 1,
+   "quickSearch": 1,
+   "filterable": 0,
+   "changeable": 0
+  },
+  {
+   "key": "legado_cyxs",
+   "name": "[小说] 穿越小说",
+   "type": 3,
+   "api": "assets://legado.py",
+   "ext": "assets://legado/src-3.json",
+   "searchable": 1,
+   "quickSearch": 1,
+   "filterable": 0,
+   "changeable": 0
+  },
+  {
+   "key": "legado_kyks",
+   "name": "[小说] 快眼看书",
+   "type": 3,
+   "api": "assets://legado.py",
+   "ext": "assets://legado/src-4.json",
+   "searchable": 1,
+   "quickSearch": 1,
+   "filterable": 0,
+   "changeable": 0
+  },
+  {
+   "key": "legado_86ds",
+   "name": "[小说] 86读书",
+   "type": 3,
+   "api": "assets://legado.py",
+   "ext": "assets://legado/src-5.json",
+   "searchable": 1,
+   "quickSearch": 1,
+   "filterable": 0,
+   "changeable": 0
+  },
+  {
+   "key": "legado_frx",
+   "name": "[小说] 芙蓉小说",
+   "type": 3,
+   "api": "assets://legado.py",
+   "ext": "assets://legado/src-6.json",
+   "searchable": 1,
+   "quickSearch": 1,
+   "filterable": 0,
+   "changeable": 0
+  },
+  {
+   "key": "legado_bqg7",
+   "name": "[小说] 笔趣阁",
+   "type": 3,
+   "api": "assets://legado.py",
+   "ext": "assets://legado/src-7.json",
+   "searchable": 1,
+   "quickSearch": 1,
+   "filterable": 0,
+   "changeable": 0
+  }
+ ],
+ "parses": [
+  {
+   "name": "星落-聚合解析",
+   "type": 1,
+   "url": "JsonBasic"
+  },
+  {
+   "name": "星落-并行解析",
+   "type": 1,
+   "url": "JsonParallel"
+  },
+  {
+   "name": "星落-顺序解析",
+   "type": 1,
+   "url": "JsonSequence"
+  }
+ ],
+ "lives": [
+  {
+   "name": "央视直播·ysp",
+   "type": 0,
+   "url": "http://127.0.0.1:8767/all.m3u",
+   "playerType": 1,
+   "epg": "",
+   "logo": ""
+  }
+ ],
+ "proxy": [
+  {
+   "name": "本地代理",
+   "hosts": [
+    "github.com",
+    "githubusercontent.com",
+    "googleapis.com",
+    "youtube.com",
+    "googlevideo.com",
+    "gstatic.com",
+    "ytimg.com"
+   ],
+   "urls": [
+    "http://127.0.0.1:7890"
+   ]
+  }
+ ]
+}
