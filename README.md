@@ -4,9 +4,10 @@
 
 ## 下载
 
-- 最新版在 [Releases](https://github.com/molixike/ok-xingluo/releases) 里，附件 `OKTV-Xingluo-v1.0.apk`（82.2 MB）
-- 直下载：https://github.com/molixike/ok-xingluo/releases/download/v1.0/OKTV-Xingluo-v1.0.apk
-- 加速下载：https://ghfast.top/https://github.com/molixike/ok-xingluo/releases/download/v1.0/OKTV-Xingluo-v1.0.apk
+- 最新版在 [Releases](https://github.com/molixike/ok-xingluo/releases) 里，附件 `OKTV-Xingluo-v2.0.apk`（82.2 MB）
+- 直下载：https://github.com/molixike/ok-xingluo/releases/download/v2.0/OKTV-Xingluo-v2.0.apk
+- 加速下载：https://ghfast.top/https://github.com/molixike/ok-xingluo/releases/download/v2.0/OKTV-Xingluo-v2.0.apk
+- 装过 v1 的可直接覆盖安装（同证书签名）；v1.0 附件仍在 v1.0 Release 里
 
 ## 安装须知（务必先看）
 
@@ -15,6 +16,16 @@
 3. 本包在构建环境里通过了签名校验（v1/v2/v3）和与原包的结构对比；构建环境没有安卓真机/模拟器，未做真机运行测试。
 
 ## 更新日志
+
+### v2.0（2026-11-05）—— 新增「阅读」
+
+- **内置 Legado 书源兼容引擎**（`assets/legado.py`）：可以导入 Legado（阅读 App）书源 JSON，一源一站，引擎执行其 CSS / XPath / Json 规则子集，含目录分页、正文分页、正文 replaceRegex 净化、目录顺序自检。带 `@js:` / `java.*` 规则的源不支持（需 Legado 本体 JS 运行时）。
+- **预置 7 个实测书源**：梧桐中文、夜天连看、穿越小说、快眼看书、86读书、芙蓉小说、笔趣阁，站名带 [小说] 标记，OK 自带阅读器自动接管：搜书 → 目录 → 读正文。构建前已在电脑上对每个源做搜索→详情→目录→正文全链路实测。
+- **配套**：v2.0 Release 附带 `legado-clean-pool.json`（594 个纯规则书源，未逐一实测）；自己加源的方法见 [docs/legado-import.md](docs/legado-import.md)。
+- **种子配置升 v2** 并修了 v1 的一个坑：播种补丁现在会把 v1 的内置配置自动刷新到 v2，覆盖安装即可，不用清数据。
+- versionCode 516 → 517，同证书签名。
+
+未移植（如实说明）：Legado 本体的换源系统、书源订阅与它的 JS 规则运行时。多源搜同名书手动切站点是等效做法。
 
 ### v1.0（2026-11-05）
 
@@ -38,7 +49,9 @@
 
 本仓库的“源码”是这次融合改造的全部材料，照着能从原版 OK 魔改包完整重现这个融合版：
 
-- [source/xingluo-config.json](source/xingluo-config.json)：种子配置原文
+- [source/legado.py](source/legado.py)：Legado 书源兼容引擎源码，[source/legado/](source/legado/)：预置的 7 个书源 JSON
+- [source/xingluo-config-v2.json](source/xingluo-config-v2.json)：v2 种子配置原文
+- [source/xingluo-config.json](source/xingluo-config.json)：v1 种子配置原文
 - [source/Config.smali](source/Config.smali)：打完补丁的 Config 类全文
 - [source/Config-seed.patch](source/Config-seed.patch)：播种补丁的 unified diff（相对原包）
 - [assets/1118.jar](assets/1118.jar)、[assets/ysp-live-v9.5.py](assets/ysp-live-v9.5.py)：内置的两个星落资源原文
