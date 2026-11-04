@@ -1,0 +1,70 @@
+--- a/smali/com/fongmi/android/tv/bean/Config.smali
++++ b/smali/com/fongmi/android/tv/bean/Config.smali
+@@ -713,6 +713,33 @@
+ 
+     .line 34
+     :cond_0
++    invoke-virtual {v0}, Lcom/fongmi/android/tv/bean/Config;->getUrl()Ljava/lang/String;
++
++    move-result-object v1
++
++    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
++
++    move-result v1
++
++    if-eqz v1, :xl_seed_done
++
++    const-string v1, "assets://xingluo-config.json"
++
++    invoke-virtual {v0, v1}, Lcom/fongmi/android/tv/bean/Config;->url(Ljava/lang/String;)Lcom/fongmi/android/tv/bean/Config;
++
++    move-result-object v0
++
++    const-string v1, "星落内置"
++
++    invoke-virtual {v0, v1}, Lcom/fongmi/android/tv/bean/Config;->name(Ljava/lang/String;)Lcom/fongmi/android/tv/bean/Config;
++
++    move-result-object v0
++
++    invoke-virtual {v0}, Lcom/fongmi/android/tv/bean/Config;->insert()Lcom/fongmi/android/tv/bean/Config;
++
++    move-result-object v0
++
++    :xl_seed_done
+     return-object v0
+ .end method
+ 
+@@ -819,6 +846,33 @@
+ 
+     .line 34
+     :cond_0
++    invoke-virtual {v0}, Lcom/fongmi/android/tv/bean/Config;->getUrl()Ljava/lang/String;
++
++    move-result-object v1
++
++    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
++
++    move-result v1
++
++    if-eqz v1, :xl_seed_done
++
++    const-string v1, "assets://xingluo-config.json"
++
++    invoke-virtual {v0, v1}, Lcom/fongmi/android/tv/bean/Config;->url(Ljava/lang/String;)Lcom/fongmi/android/tv/bean/Config;
++
++    move-result-object v0
++
++    const-string v1, "星落内置"
++
++    invoke-virtual {v0, v1}, Lcom/fongmi/android/tv/bean/Config;->name(Ljava/lang/String;)Lcom/fongmi/android/tv/bean/Config;
++
++    move-result-object v0
++
++    invoke-virtual {v0}, Lcom/fongmi/android/tv/bean/Config;->insert()Lcom/fongmi/android/tv/bean/Config;
++
++    move-result-object v0
++
++    :xl_seed_done
+     return-object v0
+ .end method
+ 
