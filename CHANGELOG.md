@@ -1,5 +1,26 @@
 # 更新日志
 
+## v2.0（2026-11-05）
+
+在 v1.0 全部内容之上新增「阅读」能力。
+
+### 新增
+
+- `assets/legado.py`：Legado 书源兼容引擎（PY 爬虫）。站点 ext 指向单个 Legado 书源 JSON 即完成导入；支持 CSS/JSoup 选择器（普通 CSS、`class./id./tag.` 链式、`.N` 索引、`[n:m]` 切片、`!N` 排除）、`@XPath:`、`@Json:`/`$.` 路径、`##正则##替换##`（含 `$1` 反向引用）、搜索 GET/POST（含单引号选项与 gbk charset)、目录 `nextTocUrl` 分页、正文 `nextContentUrl` 分页、正文 `replaceRegex` 净化、目录倒序自检自动正序。不支持 `@js:`/`<js>`/`java.*` 规则。
+- `assets/legado/src-1.json` 至 `src-7.json`：预置书源（梧桐中文、夜天连看、穿越小说、快眼看书、86读书、芙蓉小说、笔趣阁），2026-11-05 构建前逐一全链路实测通过（搜索出书、目录完整、正文可读）。
+- `assets/xingluo-config-v2.json`：种子配置 v2，sites 含上述 7 个小说站（api=`assets://legado.py`，ext=对应书源，站名带 [小说] 标记走 App 内置阅读器）。
+
+### 修改
+
+- Config 播种补丁升级：`vod()`/`live()` 在配置为空时播种 v2；已存配置 URL 恰为 v1 种子（`assets://xingluo-config.json`）时自动刷新为 v2。用户自填的配置不受影响。
+- versionCode 516 → 517，签名不变（Xingluo Merge 证书），v1 可直接覆盖安装。
+
+### 校验
+
+- 签名 v1/v2/v3 通过；与 v1 包结构对比仅新增 9 个条目（legado.py、7 个书源、种子 v2），无删减；成品反编译复核补丁两处均生效。
+- 引擎在电脑上对 37 个候选源做过全链路测试，16 个通过，其中精选 7 个入包；其余淘汰原因多为站点失效、防爬挑战、正文乱码或目录倒序无标记。
+- 未做真机运行测试（构建环境无安卓设备）。
+
 ## v1.0（2026-11-05）
 
 首个融合版发布。基底为 OK影视 5.1.6 魔改版（包名 `com.fongmi.android.tv`，versionCode 516），融合星落 6.0.5 的以下内容：
