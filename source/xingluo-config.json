@@ -1,0 +1,26 @@
+{
+  "spider": "assets://1118.jar;md5;a81c03da23212c9ffc8a699465dedc8b",
+  "sites": [],
+  "parses": [
+    {"name": "星落-聚合解析", "type": 1, "url": "JsonBasic"},
+    {"name": "星落-并行解析", "type": 1, "url": "JsonParallel"},
+    {"name": "星落-顺序解析", "type": 1, "url": "JsonSequence"}
+  ],
+  "lives": [
+    {
+      "name": "央视直播·ysp",
+      "type": 0,
+      "url": "http://127.0.0.1:8767/all.m3u",
+      "playerType": 1,
+      "epg": "",
+      "logo": ""
+    }
+  ],
+  "proxy": [
+    {
+      "name": "本地代理",
+      "hosts": ["github.com", "githubusercontent.com", "googleapis.com", "youtube.com", "googlevideo.com", "gstatic.com", "ytimg.com"],
+      "urls": ["http://127.0.0.1:7890"]
+    }
+  ]
+}
